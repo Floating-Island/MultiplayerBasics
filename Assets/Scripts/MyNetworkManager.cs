@@ -11,4 +11,11 @@ public class MyNetworkManager : NetworkManager
 
         Debug.Log("I Connected to a server!");
     }
+
+    public override void OnServerAddPlayer(NetworkConnectionToClient conn)
+    {
+        base.OnServerAddPlayer(conn);
+
+        Debug.Log("New Player Added!");
+    }
 }

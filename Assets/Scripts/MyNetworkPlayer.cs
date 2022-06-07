@@ -22,9 +22,9 @@ public class MyNetworkPlayer : NetworkBehaviour
     [Server]
     public void RandomizeSphereColor()
     {
-        sphereColor = new Color(Random.Range(0, 255), 
-                                            Random.Range(0, 255), 
-                                            Random.Range(0, 255), 
-                                            (float)Random.Range(0, 100)/100);
+        sphereColor = new Color(Random.Range(0f, 1f), 
+                                Random.Range(0f, 1f), 
+                                Random.Range(0f, 1f), 
+                                Random.Range(0f, 1f));
     }
 }

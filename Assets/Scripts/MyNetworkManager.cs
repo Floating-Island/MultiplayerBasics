@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class MyNetworkManager : NetworkManager 
 {
-    public override void OnClientConnect(NetworkConnection conn)
+    public override void OnClientConnect()
     {
-        base.OnClientConnect(conn);
+        base.OnClientConnect();
 
         Debug.Log("I Connected to a server!");
     }

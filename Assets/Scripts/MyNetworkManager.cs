@@ -16,6 +16,10 @@ public class MyNetworkManager : NetworkManager
     {
         base.OnServerAddPlayer(conn);
         
+        int randomNumber = Random.Range(5000, 7653);
+        MyNetworkPlayer clientPlayer = conn.identity.GetComponent<MyNetworkPlayer>();
+        clientPlayer.SetDisplayNameTo($"FaintColt{randomNumber}");
+
         Debug.Log($"New Player Added!\n-Number of Players connected: {numPlayers}.");
     }
 }

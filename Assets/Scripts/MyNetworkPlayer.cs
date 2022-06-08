@@ -16,7 +16,7 @@ public class MyNetworkPlayer : NetworkBehaviour
     [SerializeField]
     private Renderer sphereColorRenderer = null;
 
-    [SyncVar(hook = "HandleDisplayNameUpdate")]
+    [SyncVar]
     [SerializeField]
     private Color sphereColor = new Color();
 
@@ -44,4 +44,5 @@ public class MyNetworkPlayer : NetworkBehaviour
     {
         sphereColorRenderer.material.SetColor("_BaseColor", aNewSphereColor);
     }
+
 }

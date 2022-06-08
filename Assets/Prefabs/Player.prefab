@@ -296,6 +296,7 @@ MonoBehaviour:
   syncInterval: 0.1
   displayNameText: {fileID: 7489584946535157822}
   displayName: Missing Name
+  sphereColorRenderer: {fileID: 7022297582048318867}
   sphereColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7956415614406091938
 GameObject:

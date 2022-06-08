@@ -16,7 +16,7 @@ public class MyNetworkPlayer : NetworkBehaviour
     [SerializeField]
     private Renderer sphereColorRenderer = null;
 
-    [SyncVar]
+    [SyncVar(hook = "HandleSphereColorUpdate")]
     [SerializeField]
     private Color sphereColor = new Color();
 

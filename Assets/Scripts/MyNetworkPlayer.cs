@@ -34,6 +34,6 @@ public class MyNetworkPlayer : NetworkBehaviour
 
     private void HandleDisplayNameUpdate(string anOldDisplayName, string aNewDisplayName)
     {
-        displayNameText.text = aNewDisplayName;
+        displayNameText.SetText(aNewDisplayName);
     }
 }

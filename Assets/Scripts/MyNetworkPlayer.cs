@@ -1,10 +1,14 @@
 using Mirror;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MyNetworkPlayer : NetworkBehaviour
 {
+    [SerializeField]
+    private TMP_Text displayNameText = null;
+
     [SyncVar]
     [SerializeField]
     private string displayName = "Missing Name";

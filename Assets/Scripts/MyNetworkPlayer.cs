@@ -13,6 +13,9 @@ public class MyNetworkPlayer : NetworkBehaviour
     [SerializeField]
     private string displayName = "Missing Name";
 
+    [SerializeField]
+    private Renderer sphereColorRenderer = null;
+
     [SyncVar]
     [SerializeField]
     private Color sphereColor = new Color();
@@ -35,5 +38,10 @@ public class MyNetworkPlayer : NetworkBehaviour
     private void HandleDisplayNameUpdate(string anOldDisplayName, string aNewDisplayName)
     {
         displayNameText.SetText(aNewDisplayName);
+    }
+
+    private void HandleSphereColorUpdate(Color anOldSphereColor, Color aNewSphereColor)
+    {
+        sphereColorRenderer.material.SetColor("_BaseColor", aNewSphereColor);
     }
 }

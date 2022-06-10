@@ -28,4 +28,19 @@ public class PlayerMovement : NetworkBehaviour
         base.OnStartAuthority();
         mainCamera = Camera.main;
     }
+
+    [ClientCallback]
+    private void Update()
+    {
+        int leftMouseButtonNumber = 0;//0: left, 1: right, 2: middle
+        if(hasAuthority && Input.GetMouseButtonDown(leftMouseButtonNumber))
+        {
+            Ray godRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+            if(Physics.Raycast(godRay, out RaycastHit godTouch, Mathf.Infinity))
+            {
+                CmdMoveTo(godTouch.point);
+            }
+        }
+    }
 }

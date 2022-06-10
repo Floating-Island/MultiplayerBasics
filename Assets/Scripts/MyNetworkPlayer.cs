@@ -24,7 +24,9 @@ public class MyNetworkPlayer : NetworkBehaviour
     public void SetDisplayNameTo(string aNewDisplayName)
     {
         if(aNewDisplayName.Contains("cheater"))
+        {
             return;
+        }
         displayName = aNewDisplayName;
         RpcClientsLog($"name: {aNewDisplayName}");
     }

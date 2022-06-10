@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerMovement : NetworkBehaviour
+public class MyPlayerMovement : NetworkBehaviour
 {
     [SerializeField]
     private NavMeshAgent agent = null;
@@ -22,7 +22,7 @@ public class PlayerMovement : NetworkBehaviour
             agent.SetDestination(aHit.position);
         }
     }
-
+ 
     public override void OnStartAuthority()
     {
         base.OnStartAuthority();

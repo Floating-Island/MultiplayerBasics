@@ -23,7 +23,7 @@ public class MyNetworkPlayer : NetworkBehaviour
     [Server]
     public void SetDisplayNameTo(string aNewDisplayName)
     {
-        if(aNewDisplayName.Contains("cheater"))
+        if(aNewDisplayName.Contains("Cheater"))
         {
             return;
         }

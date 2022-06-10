@@ -24,6 +24,7 @@ public class MyNetworkPlayer : NetworkBehaviour
     public void SetDisplayNameTo(string aNewDisplayName)
     {
         displayName = aNewDisplayName;
+        RpcClientsLog($"name: {aNewDisplayName}");
     }
 
     [Server]
@@ -35,10 +36,22 @@ public class MyNetworkPlayer : NetworkBehaviour
                                 Random.Range(0f, 1f));
     }
 
+    [ClientRpc]
+    private void RpcClientsLog(string aMessage)
+    {
+        Debug.Log($"Logging: {aMessage}");
+    }
+
     [Command]
     private void CmdSetDisplayNameTo(string aNewDisplayName)
     {
         SetDisplayNameTo(aNewDisplayName);
+    }
+
+    [ContextMenu("Set Display Name")]
+    private void SetMyName()
+    {
+        CmdSetDisplayNameTo("aNewName");
     }
 
     private void HandleDisplayNameUpdate(string anOldDisplayName, string aNewDisplayName)

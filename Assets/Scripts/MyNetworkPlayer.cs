@@ -36,6 +36,12 @@ public class MyNetworkPlayer : NetworkBehaviour
                                 Random.Range(0f, 1f));
     }
 
+    [Command]
+    private void CmdSetDisplayNameTo(string aNewDisplayName)
+    {
+        SetDisplayNameTo(aNewDisplayName);
+    }
+
     #endregion
     private void HandleDisplayNameUpdate(string anOldDisplayName, string aNewDisplayName)
     {

@@ -23,6 +23,8 @@ public class MyNetworkPlayer : NetworkBehaviour
     [Server]
     public void SetDisplayNameTo(string aNewDisplayName)
     {
+        if(aNewDisplayName.Contains("cheater"))
+            return;
         displayName = aNewDisplayName;
         RpcClientsLog($"name: {aNewDisplayName}");
     }
@@ -51,7 +53,7 @@ public class MyNetworkPlayer : NetworkBehaviour
     [ContextMenu("Set Display Name")]
     private void SetMyName()
     {
-        CmdSetDisplayNameTo("aNewName");
+        CmdSetDisplayNameTo("BlackCheater28");
     }
 
     private void HandleDisplayNameUpdate(string anOldDisplayName, string aNewDisplayName)

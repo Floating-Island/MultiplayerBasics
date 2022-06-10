@@ -20,7 +20,6 @@ public class MyNetworkPlayer : NetworkBehaviour
     [SerializeField]
     private Color sphereColor = new Color();
 
-    #region server
     [Server]
     public void SetDisplayNameTo(string aNewDisplayName)
     {
@@ -42,7 +41,6 @@ public class MyNetworkPlayer : NetworkBehaviour
         SetDisplayNameTo(aNewDisplayName);
     }
 
-    #endregion
     private void HandleDisplayNameUpdate(string anOldDisplayName, string aNewDisplayName)
     {
         displayNameText.SetText(aNewDisplayName);

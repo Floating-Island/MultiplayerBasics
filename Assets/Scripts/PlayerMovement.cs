@@ -9,6 +9,9 @@ public class PlayerMovement : NetworkBehaviour
     [SerializeField]
     private NavMeshAgent agent = null;
 
+    [SerializeField]
+    private Camera mainCamera = null;
+
     [Command]
     public void CmdMoveTo(Vector3 aPosition)
     {
@@ -18,5 +21,11 @@ public class PlayerMovement : NetworkBehaviour
         {
             agent.SetDestination(aHit.position);
         }
+    }
+
+    public override void OnStartAuthority()
+    {
+        base.OnStartAuthority();
+        mainCamera = Camera.main;
     }
 }

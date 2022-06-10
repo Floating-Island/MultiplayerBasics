@@ -12,6 +12,11 @@ public class PlayerMovement : NetworkBehaviour
     [Command]
     public void CmdMoveTo(Vector3 aPosition)
     {
-        agent.SetDestination(aPosition);
+        float maxNavMeshDistance = 1f;
+
+        if(NavMesh.SamplePosition(aPosition, out NavMeshHit aHit, maxNavMeshDistance, NavMesh.AllAreas))
+        {
+            agent.SetDestination(aHit.position);
+        }
     }
 }
